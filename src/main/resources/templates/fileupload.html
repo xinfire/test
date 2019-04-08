@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+var Upload={
+    objId:"",
+    objName:"",
+    img:"",
+    imgIds:"",
+    imgObj:"",
+    tableId:"",
+
+    init:function(){
+        this.objId=getParam(location.href, "objId");
+        this.objName=getParam(location.href, "objName");
+        this.tableId=getParam(location.href, "tableId");
+        this.img=getParam(location.href, "img");
+        this.imgIds=getParam(location.href, "imgIds");
+        this.imgObj=getParam(location.href, "imgObj");
+        document.upForm.action="/file/upload.do?img="+encodeURIComponent(this.img)+"&tableId="+encodeURIComponent(this.tableId)+"&imgIds="+encodeURIComponent(this.imgIds)+"&imgObj="+encodeURIComponent(this.imgObj)+"&objName="+encodeURIComponent(this.objName)+"&objId="+encodeURIComponent(this.objId);
+    },
+    doCallback:function(rs){   // alert("rs="+JSON.stringify(rs)+","+this.objName);
+        if(rs.status=='1'){
+            alert("上传成功！");
+            rs.cmd='upload';
+            rs._img=this.img;
+            rs._imgIds=this.imgIds;
+            rs._imgObj=this.imgObj;
+            rs._objName=this.objName;
+            rs._objId=this.objId;
+            var s="parent."+this.objName+".doCallback(rs);";
+            // alert(s);
+            eval(s);
+            Upload.reload();
+        }else{
+            alert("上传失败！");
+        }
+    },
+    doUpload:function(o){
+        o.click();
+    },
+    onChange:function(f, o){
+        if(o.value!=""){
+            f.submit();
+        }
+    },
+    reload:function(){
+        var s='<input t="'+Math.random()+'" type="file" class="file" name="upfile" onchange="Upload.onChange(document.upForm,this)" size="50">';
+        document.getElementById('files').innerHTML=s;
+    }
+}
+
+
+</script>
+<body>
+<input type="button" value="上传" class="upload-button" style="width: 20px;height: 20px;background-color: #b1b1b1" onclick="Upload.doUpload(document.fileupload.file)">
+<form style="display: none;" name="fileupload" enctype="multipart/form-data" method="post" action="/testuploadimg">
+    图片<input type="file" name="file" onchange="Upload.onChange(document.fileupload,this)"/>
+    <input  type="submit" value="上传"/>
+</form>
+
+<script src="../common/js/jquery.min.js"></script>
+</body>
+</html>

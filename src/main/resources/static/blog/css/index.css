@@ -1,0 +1,30 @@
+body {
+    background-color: #000000!important;
+}
+
+
+/*banner*/
+
+.main {
+    position: relative;
+    top: -380px;
+}
+
+.main .content>h3 {
+    font-size: 34px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+.main .row1 .swiper-container .introduce{
+    color: #9a9a9a;
+    /*background-color: red;*/
+    border: red solid 2px;
+    height: 500px;
+}
+
+.mine-left{
+    color:#9d9d9d;
+    padding: 0 50px;
+}

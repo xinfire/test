@@ -1,0 +1,37 @@
+/*white*/
+.box-left,.right-style,.menu-nav,.fa-arrow-up,.menu-ul a{
+    background-color: #FAFAFA!important;
+    color: #333;
+}
+.box-right-inner{
+    background-color: #fff;
+    color: #333;
+}
+.box-right-inner * {
+    color: #333;
+}
+
+.tree-li-default span.active {
+    color: #008CFF;
+
+
+}
+.tree-li-icon {
+    background: url(../img/icon18.png) no-repeat;
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-size: 10px 10px;
+    margin-top: 15px;
+}
+.tree-li-default.active .tree-li-icon {
+    background: url(../img/icon17.png) no-repeat;
+    background-size: 10px 10px;
+}
+
+
+.right-title:hover{
+    background-color: rgba(255,255,255,.8);
+}

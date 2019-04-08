@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>文档归类</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/white.css" id="white" title="white">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div id="app" style="" class="book">
+        <div class="box" id="box">
+            <!--左侧-->
+            <div class="box-left book-summary" id="left">
+            <div class="box-left-inner">
+                <!--搜索-->
+                <div class="box-left-search">
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-close" @click="close()"></i> 
+                    <div><input type="text" placeholder="输入并搜索"></div>
+                </div>
+                <!--搜索-->
+                    
+                <div class="file-tree">
+                    <!--文件树-->
+                    <ul class="tree-ul default" style="overflow-y: auto;">
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-null"></div>
+                                    <span>前言</span>
+                                </div>
+                            </li>
+
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>修订记录</span>
+                                </div>
+                                
+                                <ul class="tree-ul">
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <span>视频播放</span>
+                                        </div>
+                                    </li>
+
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <span>视频播放</span>
+                                        </div>
+
+                                        <ul class="tree-ul">
+                                            <li class="tree-li">
+                                                <div class="tree-li-default">
+                                                    <div class="tree-li-icon"></div>
+                                                    <span>视频播放</span>
+                                                </div>
+                                                <ul class="tree-ul">
+                                                    <li class="tree-li">
+                                                        <div class="tree-li-default">
+                                                            <div class="tree-li-icon"></div>
+                                                            <span>视频播放</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tree-li">
+                                                        <div class="tree-li-default">
+                                                            <div class="tree-li-icon"></div>
+                                                            <span>视频播放</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="tree-li">
+                                                <div class="tree-li-default">
+                                                    <div class="tree-li-icon"></div>
+                                                    <span>视频播放</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <div class="tree-li-img"></div>
+                                            <span>视频播放</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>ClassIn API 简介</span>
+                                </div>
+                                
+                                <ul class="tree-ul">
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <span>视频播放</span>
+                                        </div>
+                                    </li>
+
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <span>视频播放</span>
+                                        </div>
+
+                                        <ul class="tree-ul">
+                                            <li class="tree-li">
+                                                <div class="tree-li-default">
+                                                    <div class="tree-li-icon"></div>
+                                                    <span>视频播放</span>
+                                                </div>
+                                                <ul class="tree-ul">
+                                                    <li class="tree-li">
+                                                        <div class="tree-li-default">
+                                                            <div class="tree-li-icon"></div>
+                                                            <span>视频播放</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tree-li">
+                                                        <div class="tree-li-default">
+                                                            <div class="tree-li-icon"></div>
+                                                            <span>视频播放</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="tree-li">
+                                                <div class="tree-li-default">
+                                                    <div class="tree-li-icon"></div>
+                                                    <span>视频播放</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <div class="tree-li-img"></div>
+                                            <span>视频播放</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>用户相关接口</span>
+                                </div>
+                                   
+                                <ul class="tree-ul">
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <span>视频播放</span>
+                                        </div>
+                                    </li>
+
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <span>视频播放</span>
+                                        </div>
+
+                                        <ul class="tree-ul">
+                                            <li class="tree-li">
+                                                <div class="tree-li-default">
+                                                    <div class="tree-li-icon"></div>
+                                                    <span>视频播放</span>
+                                                </div>
+                                                <ul class="tree-ul">
+                                                    <li class="tree-li">
+                                                        <div class="tree-li-default">
+                                                            <div class="tree-li-icon"></div>
+                                                            <span>视频播放</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="tree-li">
+                                                        <div class="tree-li-default">
+                                                            <div class="tree-li-icon"></div>
+                                                            <span>视频播放</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="tree-li">
+                                                <div class="tree-li-default">
+                                                    <div class="tree-li-icon"></div>
+                                                    <span>视频播放</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="tree-li">
+                                        <div class="tree-li-default">
+                                            <div class="tree-li-icon"></div>
+                                            <div class="tree-li-img"></div>
+                                            <span>视频播放</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>教室相关接口</span>
+                                </div>
+                            </li>
+                            
+                             <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>云盘相关接口</span>
+                                </div>
+                            </li>
+                            
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>机构订阅相关接口</span>
+                                </div>
+                            </li>
+                            
+                            <li class="tree-li">
+                                <div class="tree-li-default">
+                                    <div class="tree-li-icon"></div>
+                                    <span>附录</span>
+                                </div>
+                            </li>
+                        </ul>
+                    <!--文件树-->
+                </div>
+            </div>
+            <div class="show-btn" @click="show_btn()"><i class="fa fa-reorder"></i></div>
+        </div>
+            <!--左侧-->
+           
+            <!--拖拽-->
+<!--            <div class="resize" id="resize"></div>-->
+            <!--拖拽-->
+                  
+            <!--右侧-->
+            <div class="box-right book-body" id="right">
+                <!--右侧标题-->
+                <div class="right-title">
+                    <a href="">EEO 系统概述</a>
+                </div>
+                <!--右侧标题-->
+               
+               
+                <!--右侧头部-->
+                <div class="box-right-top"><i class="fa fa-font" @click="font_style()"></i></div>
+                <ul class="right-style">
+                    <li>
+                        <i class="fa fa-font" style="font-size: 14px" @click="font_size01()"></i>
+                        <i class="fa fa-font" style="font-size: 20px" @click="font_size02()"></i>
+                    </li>
+                    <li>
+                       <span @click="font_family01()">Serif</span>
+                       <span @click="font_family02()">Sans</span>
+                    </li>
+                    <li>
+                        <span @click="white()">White</span>
+                        <span @click="Sepia()">Sepia</span>
+                        <span @click="night()">Night</span>
+
+                    </li>
+                </ul>
+                <!--右侧头部-->
+
+                <div class="box-right-inner">
+                    <!-- 右边主体-->
+                    <div class="right-main">
+                        <!--前言-->
+                        <div class="preface" v-if="false">
+                            <h2>http://www.shellskey.com</h2>
+                            <h4>2.0.0</h4>
+                            <img src="img/logo.png" alt="">
+                        </div>
+                        <!--前言-->
+                      
+                       <div class="right-main-inner" v-else>
+<!--
+                           一级标题：h2
+                           二级标题：h3
+                           三级标题：h4
+                           四级标题：h5
+                           正文内容：14px
+-->
+                            <h2><a href="javascript:;" name="h2-01">EEO 系统概述</a></h2>
+                            
+                            <h3><a href="javascript:;" name="h3-01">EEO 系统概述</a></h3>
+                            
+                            <p>EEO 提供一个实时在线教室系统及相关服务。 系统主要包含两部分，一个客户端产品，产品名叫 ClassIn，目前已经支持 Windows 和 Mac OS 、iOS 、 Android 移动端平台。另一个是基于 Web 的后台管理系统，访问网址为 www.eeo.cn。</p>
+                            
+                            <h3><a href="javascript:;" name="h3-02">ClassIn 概述</a></h3>
+                            
+                            <p>ClassIn 是一个客户端应用程序，需要安装后使用。基础版本的 ClassIn 提供1v6（1个老师和最多12个学生有视频）以内的各种班型的实时在线课堂。</p>
+                                 
+                            <h3><a href="javascript:;" name="h3-03">eeo.cn 概述</a></h3>
+                            
+                            <p>基于 Web 的后台管理系统，机构可以使用这个系统来进行课程、课节的管理，老师、学生、旁听的设置，上课数据的收集与展示，实时监课的管理云盘、课件的管理等。 另外 eeo.cn 支持 API 对接，使得机构可以自行开发更加适合自身业务逻辑的管理系统。</p>
+                                 
+                            <h3><a href="javascript:;" name="h3-04">eeo.cn 的 API 对接说明</a></h3>
+                                      
+                            <h4><a href="javascript:;" name="h4-01">基本概念</a></h4>
+                                                 
+                            <h5>身份相关（用户、老师、学生、旁听、机构、子帐号等）</h5>
+                            
+                            <ul>
+                                <li>EEO 的系统是一个强帐号系统，每个人都需要有一个用户帐号。</li>
+                                <li>用户必须登陆 ClassIn 或者 eeo.cn 才能使用各项业务功能。</li>
+                                <li>机构需要将某些用户添加为机构老师，才能在设置课程、课节的时候将机构老师指定为本课程、课节的老师。</li>
+                                <li>学生、旁听等都是针对课程或课节而言的一种身份。一个用户可以在某节课下为老师，同时也可以在其他课程或课节下是学生或其他身份。</li>
+                                <li>任何用户都可以被指定为课程、课节下的学生（机构账号不可以指定为学生）。</li>
+                                <li>旁听只能针对课程来设置。</li>
+                            </ul>
+                            
+                            <h5>课程相关（课程、课节）</h5>
+                            
+                            <ul>
+                                <li>EEO 的系统是一个强帐号系统，每个人都需要有一个用户帐号。</li>
+                                <li>用户必须登陆 ClassIn 或者 eeo.cn 才能使用各项业务功能。</li>
+                                <li>任何用户都可以被指定为课程、课节下的学生（机构账号不可以指定为学生）。</li>
+                                <li>旁听只能针对课程来设置。</li>
+                            </ul>
+                            
+                            <h5>云盘相关</h5>
+                            
+                            <ul>
+                                <li>EEO 的系统是一个强帐号系统，每个人都需要有一个用户帐号。</li>
+                                <li>任何用户都可以被指定为课程、课节下的学生（机构账号不可以指定为学生）。</li>
+                                <li>旁听只能针对课程来设置。</li>
+                            </ul>
+                           
+                           <h4><a href="javascript:;" name="h4-02">API 中的名词及关系</a></h4>
+                           
+                           <ul>
+                               <li>用户：ClassIn 是一个强帐号系统，所有的用户必须先登录，才能看到属于用户的相关课程信息，以及使用其他系统提供的各项功能。也因此所有的用户都需要有 EEO 的帐号。</li>
+                               <li>课程、课节：一个课程包含多个课节，不支持独立的课节，也就是必须先有课程，然后再课程下添加一个或多个课节。</li>
+                               <li>课程下的属性有：</li>
+                               <ul>
+                                   <li>课程名称：会显示在 ClassIn 的界面上。为了便于管理，建议精心设计课程名称的命名规则。</li>
+                                   <li>课程图片：会显示在 ClassIn 的界面上。该图片不支持修改。</li>
+                                   <li>过期时间：每个课程都有一个截止日期，截止日期之后，系统将不再支持针对该课程的任何增、删、改等操作。如果没有设置该值，系统自动设置为该课程下最后一节课之后的90天。</li>
+                                   <li>课程资源：EEO 系统支持机构为每个课程设置一个云盘目录（没有为课节节设置云盘目录），授课老师在该课程的上课过程中，可以访问、使用这个云盘目录下的所有可用课件。如果为单个课节设置了云盘目录，那么授课老师在该课节的上课过程中，将只能访问、使用该课节所设置的云盘目录。</li>
+                                   <li>课程学生：逻辑和课程资源类似，课程学生可以进入该课程下的所有课节，后创建的课节也允许课程学生进入。</li>
+                               </ul>
+                           </ul>
+                           
+                           <h4><a href="javascript:;" name="h4-02">机构在做 API 对接时的主要工作</a></h4>
+                           
+                           <h5>对接用户</h5>
+                           
+                           <ul>
+                               <li>机构必须使用真实手机号来创建 EEO 的用户帐号（需要其他形式，请与商务人员联系咨询）</li>
+                               <li>把所有老师的用户帐号添加为机构老师（调用 API，或者在 eeo.cn 手工完成）</li>
+                               <li>API 手册里有创建用户、修改密码、修改用户信息等接口</li>
+                           </ul>
+                       </div>
+                    </div>
+                    <!-- 右边主体-->
+                    
+                    <i class="fa fa-chevron-left"></i>
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </div>
+            <!--右侧-->
+        </div> 
+            
+        <!--菜单导航-->
+        <div class="menu-nav">
+                <i class="fa fa-reorder"></i>
+                <ul class="menu-ul">
+                    <li>
+                        <a href="#h2-01">EEO 系统概述</a>
+                        <ul>
+                            <li><a href="#h3-01">EEO 系统概述</a></li>
+                            <li><a href="#h3-02">ClassIn 概述</a></li>
+                            <li><a href="#h3-03">eeo.cn 概述</a></li>
+                            <li>
+                                <a href="#h3-04">eeo.cn 的 API 对接说明</a>
+                                <ul>
+                                    <li><a href="#h4-01">API 中的名词及关系</a></li>
+                                    <li><a href="#h4-02">机构在做 API 对接时的主要工作</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <!--菜单导航-->
+            
+        <!-- 返回顶部-->
+        <i class="fa fa-arrow-up" @click="return_top()"></i>
+        <!-- 返回顶部-->
+    </div>
+
+    <script src="../common/js/jquery.min.js"></script>
+    <script src="../common/js/bootstrap.min.js"></script>
+    <script src="../common/js/vue.min.js"></script>
+    <script src="../common/js/web.js"></script>
+    <script src="js/book.js"></script> 
+<!--
+        <script type="text/javascript">
+        var isResizing = false;
+        var lastDownX = 0;
+
+        $(function () {
+            var container = $('#container.resizable');
+            // 根据当前窗口大小设定 container 的高度
+            container.css({'height': ($(window).height() - 20), 'opacity': 1});
+
+            var left = $('#left');
+            var right = $('#right');
+            var resizor = $('#resizor');
+
+            resizor.on('mousedown', function (e) {
+                isResizing = true;
+                lastDownX = e.clientX;
+            });
+
+            $(document).on('mousemove', function (e) {
+                if (!isResizing) return true;
+                var offsetRight = container.width() - (e.clientX - container.offset().left);
+                // 判断左右拖动范围
+                if (offsetRight < 0 || offsetRight >= container.width()) {
+                    isResizing = false;
+                    return true;
+                }
+                left.css('right', offsetRight);
+                resizor.css('right', offsetRight);
+                right.css('width', offsetRight);
+            }).on('mouseup', function (e) {
+                isResizing = false;
+            });
+        });
+    </script>
+-->
+</body>
+
+</html>

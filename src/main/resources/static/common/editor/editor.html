@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <!--demo-->
+    <div style="text-align:left;">
+        <div id="divDemo">
+            <!--            <p>欢迎使用<b>wangEditor 富文本编辑器</b>，请输入内容...</p>-->
+        </div>
+    </div>
+    <!--demo end-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../../common/js/store.min.js"></script>
+    <script src="../../common/js/web.js"></script>
+    <script src="editor.js"></script>
+
+    <script>
+        var obj_id = Web.getParam(location.href,'id','');
+        $(function() {
+            var E = window.wangEditor
+            var editor = new E('#divDemo')
+            editor.customConfig.uploadImgShowBase64 = true
+            editor.create();
+            editor.change = function () {          // 这里是change 不是官方文档中的 onchange
+                // 编辑区域内容变化时，实时打印出当前内容
+                parent.MyEditor.setData(obj_id,editor);
+            }
+
+            function initEditor(){
+                if(parent && parent.MyEditor){
+                    parent.MyEditor.initData(obj_id, editor);
+                }
+            }
+            initEditor();
+        });
+    </script>
+</body>
+
+</html>

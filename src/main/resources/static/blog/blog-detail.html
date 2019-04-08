@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>文章预览 </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="css/blog-detail.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="../common/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <!--头部-->
+        <div class="header">
+            <!--logo-->
+            <a href="../index.html" class="logo"><img src="../common/img/logo01.png" alt=""></a>
+            <!--logo-->
+
+            <!-- 导航-->
+            <ul class="header-nav">
+                <li><a href="../forum/index.html">社区</a></li>
+                <li><a href="../ask/index.html">问答</a></li>
+                <li><a href="../blog/index.html">专栏</a><img src="../common/img/gif.gif" alt=""></li>
+                <li><a href="">技能树</a></li>
+                <li><a href="">讨论</a></li>
+            </ul>
+            <!-- 导航-->
+
+            <div class="header-icon">
+                <img src="../common/img/top-icon01.png" alt="">
+                <img src="../common/img/top-icon02.png" alt="">
+            </div>
+        </div>
+        <!--头部-->
+
+        <!--置顶-->
+        <div class="fixed-top">
+            <!--logo-->
+            <a href="index.html" class="logo"><img src="../common/img/logo01.png" alt=""></a>
+            <!--logo-->
+
+            <!-- 导航-->
+            <p>&lt; 前端插拔式 SPA 应用架构实现方案</p>
+            <!-- 导航-->
+
+            <div class="header-icon">
+                <img src="../common/img/fixed-icon01.png" alt="" @click="return_top">
+                <img src="../common/img/fixed-icon02.png" alt="" @click="comment()">
+                <img src="../common/img/fixed-icon03.png" alt="">
+                <img src="../common/img/fixed-icon04.png" alt="" @click="menu()">
+            </div>
+        </div>
+        <!--置顶-->
+
+        <!--主体-->
+        <div class="main" style="margin-top:20px">
+            <div class="content">
+                <div class="blog-title">
+                    <button @click="continue_edit()">继续编辑</button>
+                    <h3>{{data.name}}</h3>
+                </div>
+
+                <div class="blog-user">
+                    <div class="blog-user-img"><img src="../common/img/138004582008137548.jpg" alt=""></div>
+                    <span style="margin-right:30px;">{{author.username}}</span>
+
+                    <p>{{topicObj.create_at}} 发表在 <span>{{topicObj.forumName?'topicObj.forumName':'你好'}}</span></p>
+                    <ul>
+                        <li><img src="../common/img/index-icon09.png" alt="">{{topicObj.read_num}}</li>
+                        <li><img src="../common/img/index-icon10.png" alt="">{{topicObj.thread_num}}</li>
+                        <li><img src="../common/img/index-icon07.png" alt="">{{topicObj.good}}</li>
+                    </ul>
+                    <!--<h4>完成阅读预计需要6分钟</h4>-->
+                </div>
+                <ul class="tag-ul">
+                    <li v-for="tag in tags">{{tag}}</li>
+                </ul>
+
+                <div class="article">
+                    <div class="article-img"><img :src="article_src" alt="" >
+                        <template v-if="data.content1&&data.content1.length>0" v-for="page in data.content1">
+                            <h3 v-html="page.name"></h3>
+                            <br>
+                            <p v-if="page.remark" v-html="page.remark"></p>
+                            <template v-if="page.pageObjs" v-for="page1 in page.content1">
+                                <h3 v-html="page1.name"></h3>
+                                <br>
+                                <p v-if="page1.remark" v-html="page1.remark"></p>
+                                <template v-if="page1.pageObjs" v-for="page2 in page1.content1">
+                                    <h3 v-html="page2.name"></h3>
+                                    <br>
+                                    <p v-if="page2.remark" v-html="page2.remark"></p>
+                                    <template v-if="page2.pageObjs" v-for="page3 in page2.content1">
+                                        <h3 v-html="page3.name"></h3>
+                                        <br>
+                                        <p v-if="page3.remark" v-html="page3.remark"></p>
+                                    </template>
+                                </template>
+                            </template>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="article-btn"><button @click="continue_edit()">继续编辑</button><button style="background:#e291c9" @click="wrap_show()">发布文章</button></div>
+            </div>
+
+        </div>
+        <!--主体-->
+
+        <!--底部-->
+        <div class="footer">
+            <div class="content" style="overflow:hidden">
+                <p>Redis 现在得Stable 版本是4.0.11，对Redis比较关注的童鞋都知道，4.0引入了 Module.我们先一起你看看Redis 4.0都更新了啥</p>
+                <ul class="footer-ul">
+                    <li><img src="../common/img/footer-icon01.png" alt=""></li>
+                    <li><img src="../common/img/footer-icon02.png" alt=""></li>
+                    <li><img src="../common/img/footer-icon03.png" alt=""></li>
+                    <li><img src="../common/img/footer-icon04.png" alt=""></li>
+                    <li><img src="../common/img/footer-icon05.png" alt=""></li>
+                </ul>
+
+                <ul class="footer-contact">
+                    <li><img src="../common/img/footer-icon06.png" alt=""><span>上海市 长宁区 国际大厦</span></li>
+                    <li><img src="../common/img/footer-icon07.png" alt="">
+                        <span>65865635@168.com</span></li>
+                    <li><img src="../common/img/footer-icon08.png" alt=""><span>021-9999</span></li>
+                </ul>
+            </div>
+        </div>
+        <!--底部-->
+
+        <!--提示框-->
+        <div class="tip-wrap tip-wrap1">
+            <div class="tip-null" @click="tip_null()"></div>
+            <div class="tip-inner">
+                <h3>发布成功</h3>
+                <p>快点击分享按钮进行分享吧</p>
+                <div class="tip-button"><button @click="tip_null()">返回之前页面</button><button style="background:#eb9ccc" @click="share()">分享</button></div>
+            </div>
+        </div>
+
+        <div class="tip-wrap copy-wrap">
+            <div class="tip-null" @click="tip_null()"></div>
+            <div class="tip-inner">
+                <div class="code"><img src="../common/img/code.jpg" alt=""></div>
+                <div class="tip-inner-url">
+                    <div class="share-url"><input type="text" value="https://awsvip.com/blog/blog-detail2.html?topic_id=1543849083890cG6CHwVVNn0vAdo1X" id="copy-content" placeholder=""></div>
+                    <button @click="copy_url()">复制链接</button>
+                </div>
+            </div>
+        </div>
+        <!--提示框-->
+
+        <!--顶部评论-->
+        <div class="top-comment">
+            <h3>您当前阅读到</h3>
+            <div class="top-comment-div">
+                <p>实现方案 - 构建配置</p>
+                <div><img src="../common/img/icon-01.png" alt="" @click="comment_show()">
+                    <p>显示在评论中</p>
+                </div>
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="在此输入评论"></textarea>
+            <button @click="submit_comment()">发表评论</button>
+        </div>
+        <!--顶部评论-->
+
+        <!--顶部菜单-->
+        <div class="top-menu">
+            <ul>
+                <li v-for="list in lists">
+                    <a href="javascript:;" @click="list_item()">● {{list.text}}</a>
+                    <ul>
+                        <li v-for="item in (list.items)"><a href="">● {{item}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--顶部菜单-->
+    </div>
+
+    <script src="../common/js/jquery.min.js "></script>
+    <script src="../common/js/bootstrap.min.js "></script>
+    <script src="../common/js/vue.min.js "></script>
+    <script src="../common/js/store.min.js"></script>
+    <script src="../common/js/web.js"></script>
+    <script src="js/blog-detail.js"></script>
+</body>
+
+</html>

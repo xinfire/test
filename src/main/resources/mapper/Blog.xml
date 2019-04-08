@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winterchen.demo.dao.BlogDao">
+    <resultMap id="BaseResultMap" type="com.winterchen.demo.pojo.Blog">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="title" jdbcType="VARCHAR" property="title" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+
+        <result column="create_at" jdbcType="VARCHAR" property="createAt" />
+        <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+        <result column="update_at" jdbcType="VARCHAR" property="updateAt" />
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+        <result column="delete_at" jdbcType="VARCHAR" property="deleteAt" />
+        <result column="delete_by" jdbcType="VARCHAR" property="deleteBy" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id,title, name, create_at, create_by,
+    update_at, update_by, delete_at, delete_by
+  </sql>
+    <select id="getBlog" resultType="Blog">
+        select
+        <include refid="Base_Column_List" />
+        from t_blog
+        where id = #{id}
+    </select>
+    <insert id="saveBlog" parameterType="com.winterchen.demo.pojo.Blog" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
+          insert  into t_blog (title,name) values (#{title,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+    </insert>
+</mapper>

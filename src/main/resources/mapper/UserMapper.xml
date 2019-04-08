@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.winterchen.demo.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.winterchen.demo.pojo.User">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="gender" jdbcType="VARCHAR" property="gender" />
+        <result column="ip" jdbcType="VARCHAR" property="ip" />
+        <result column="openid" jdbcType="VARCHAR" property="openid" />
+        <result column="unionid" jdbcType="VARCHAR" property="unionid" />
+        <result column="create_at" jdbcType="VARCHAR" property="createAt" />
+        <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+        <result column="update_at" jdbcType="VARCHAR" property="updateAt" />
+        <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+        <result column="delete_at" jdbcType="VARCHAR" property="deleteAt" />
+        <result column="delete_by" jdbcType="VARCHAR" property="deleteBy" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, nickname, email, mobile, password, gender, ip, openid, unionid, create_at, create_by,
+    update_at, update_by, delete_at, delete_by
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from t_user
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+</mapper>
